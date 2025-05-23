@@ -11,20 +11,17 @@ namespace MvcEntityFrameworkApp.Controllers
     {
         private EmployeeDBEntities db = new EmployeeDBEntities(); // The DbContext instance
 
-        // GET: Employee List
         public ActionResult Index()
         {
             var employees = db.Employees.ToList();  // Retrieve employees from database
             return View(employees);
         }
 
-        // GET: Create Employee Form
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Save Employee to DB
         [HttpPost]
         public ActionResult Create(Employee employee)
         {
